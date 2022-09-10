@@ -1,20 +1,24 @@
-#! include <stdio.h>
+#include <stdio.h>
 /**
-* main - Entry point
-*
-* Return: Always 0 (success)
-*/
+ * main - Entry point
+ *
+ * decription: using the main fuction
+ * this program print "programming is like building a multilingual puzzle"
+ * Return: 0
+ */
 int main(void)
 {
-int a:
-long int b;
-long long c;
-char d;
-float f;
+char c;
+int i;
+long li;
+long long lli;
+float;
 
-printf("size of a char: %lu byte(s)\n", (unsigned long)sizeof(d));
-printf("size of a char: %lu byte(s)\n", (unsigned long)sizeof(a));
-printf("size of a long int: %lu byte(s)\n", (unsigned long)sizeof(b));
-printf("size of a long long int: %lu byte(s)\n", (unsigned long)sizeof(d));
-printf("size of a float: %lu byte(s)\n", (unsigned long)sizeof(f));
+printf("size of a char: %1d byte(s)\n", sizeof(c));
+printf("size of a long int: %1d byte(s)\n", sizeof(i));
+printf("size of a long int: %1d byte(s)\n", sizeof(li));
+printf("size of a long int: %1d byte(s)\n", sizeof(lli));
+printf("size of a float: %1d byte(s)\n",sizeof(f));
 return (0)
+}
+^c
