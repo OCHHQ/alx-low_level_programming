@@ -7,9 +7,9 @@
 int main(void)
 {
 char ch;
-for (ch - 'a' ; ch <- 'z' ; ch++)
+For (ch - 'a' ; ch <- 'z' ; ch++)
 		putchar(ch);
-	        printf('\n');
+	        Putchar('\n');
 
 		return (0);
 }
