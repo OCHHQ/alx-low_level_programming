@@ -4,7 +4,7 @@
  *
  * description: using the main function
  * print proogramming psotive, zero. or negative
- * Return (0)
+ * Return 0
  */
 int main(void)
 {
