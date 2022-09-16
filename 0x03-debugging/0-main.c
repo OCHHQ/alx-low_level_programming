@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
  * main - tests fuction if its positive or negative 
  * Return: 0
