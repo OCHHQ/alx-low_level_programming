@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * function - that print athe lenght of a string
@@ -9,7 +8,7 @@
 
 int _strlen(char *s)
 {
-	int lenght =;
+	int lenght =0;
 
 	while(s[lenght] != '\0')
 	{
