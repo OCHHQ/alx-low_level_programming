@@ -5,7 +5,7 @@
  * @a: point of an array.
  * @b: number of the array elements.
  *
- * Return: void .
+ * Return: void.
  */
 void print_array(int *a, int n)
 {
