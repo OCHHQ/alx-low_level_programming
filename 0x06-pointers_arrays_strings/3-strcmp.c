@@ -1,8 +1,9 @@
 #include "main.h"
 /**
  * _strcmp - function compareing string
- *
- *
+ * @s1: first string
+ * @s2: second string
+ *Return: 
  *
  */
 
