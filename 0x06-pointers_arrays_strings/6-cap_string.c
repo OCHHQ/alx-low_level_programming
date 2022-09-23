@@ -1,9 +1,8 @@
 #include "main.h"
 /**
- *
- *
- *
- *
+ *cap_string  - function that capitalized the firdt 
+ *@str: string to capitalize
+ *Return: return the capitalized string
  */
 char *cap_string(char *);
 {
@@ -19,7 +18,7 @@ char *cap_string(char *);
 				str[index - 1] == '\n' ||
 				str[index - 1] == ',' ||
 				str[index - 1] == ';' ||
-				str[index - 1] == ',' ||
+				str[index - 1] == '.' ||
 				str[index - 1] == '!' ||
 				str[index - 1] == '?' ||
 				str[index - 1] == '"' ||
