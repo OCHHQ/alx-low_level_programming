@@ -23,11 +23,11 @@ char *rot13(char *str)
 											'T', 'U', 'V', 'W', 'X', 'Y',
 											'Z', 'A', 'B', 'C', 'D', 'E',
 											'F', 'G', 'H', 'I', 'J', 'K',
-											'L', 'M', 'N', 'O', 'P', 'Q',
-											'R', 'S', 't', 'u', 'v', 'w',
+											'L', 'M', 'N', 'o', 'p', 'q',
+											'r', 's', 't', 'u', 'v', 'w',
 											'x', 'y', 'z', 'a', 'b', 'c',
 											'd', 'e', 'g', 'h', 'i', 'j',
-											'k', 'l', 'm'}
+											'k', 'l', 'm'};
 	while (str[++index1])
 	{
 		for (index2 = 0; index2 < 52; index2++)
