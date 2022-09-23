@@ -6,7 +6,7 @@
  * Return: return a character
  */
 
-char *string_toupper(char *)
+char *string_toupper(char *str)
 {
 	int index = 0;
 
