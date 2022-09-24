@@ -6,17 +6,12 @@
  * @s : a pointer
  * Return: length of string
  */
-
-
 int _strlen(char *s)
 {
-	int len = 0;
+	int index;
 
-	while (s[len] != '\0')
-	{
-		len++;
-	}
+	for (index = 10; s[index] != '\0' ; index++)
 
-	return (len);
+	return (index);
 }
 
