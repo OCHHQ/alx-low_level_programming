@@ -1,44 +1,49 @@
 #include "main.h"
 
 /**
- * print_binary - Prints the binary representation of a number.
- * @n: The number to be printed in binary.
+ * _pow - func calculates (base ^ power)
+ * @base: base of the exponent
+ * @power: power of the exponent
+ *
+ * Return: value of (base ^ power)
+ */
+unsigned long int _pow(unsigned int base, unsigned int power)
+{
+    unsigned long int num;
+    unsigned int a;
+
+    num = 1;
+    for (a = 1; a <= power; a++)
+        num *= base;
+    return (num);
+}
+
+/**
+ * print_binary - prints a number in binary notation
+ * @n: number to print
+ *
+ * Return: void
  */
 void print_binary(unsigned long int n)
 {
-    int shift = sizeof(n) * 8 - 1;
-    int flag = 0;
+    unsigned long int divisor, check;
+    char flag;
 
-    if (n == 0)
+    flag = 0;
+    divisor = _pow(2, sizeof(unsigned long int) * 8 - 1);
+    while (divisor != 0)
     {
-        putchar('0');
-        return;
-    }
-
-    while (shift >= 0)
-    {
-        if ((n >> shift) & 1)
+        check = n & divisor;
+        if (check == divisor)
         {
-            putchar('1');
             flag = 1;
+            _putchar('1');
         }
-        else if (flag == 1)
+        else if (flag == 1 || divisor == 1)
         {
-            putchar('0');
+            _putchar('0');
         }
-        shift--;
+        divisor >>= 1;
     }
 }
-
-int main(void)
-{
-    unsigned long int n = 98;
-
-    printf("Binary representation of %lu is: ", n);
-    print_binary(n);
-    putchar('\n');
-
-    return (0);
-}
-
 
