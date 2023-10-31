@@ -15,7 +15,7 @@ void check_IO_stat(int stat, int fd, char *filename, char mode);
  */
 int main(int argc, char *argv[])
 {
-	int src, dest, n_reasd = 1024, wrote, close_src, close_dest;
+	int src, dest, n_read = 1024, wrote, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 	check_IO_stat(close_src, src, NULL, 'C');
 	close_dest = close(dest);
 	check_IO_stat(close_dest, dest NULL, 'C');
-	return (0)
+	return (0);
 }
 
 /**
@@ -67,7 +67,7 @@ void check_IO_stat(int stat, int fd, char *filename, char mode)
 	}
 	else if (mode == 'W' && stat == -1)
 	{
-		dprint(STDERR_FILENO, "Error: can't write to %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: can't write to %s\n", filename);
 		exit(99);
 	}
 }
