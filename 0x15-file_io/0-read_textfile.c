@@ -31,16 +31,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(file_d);
 		return (0);
 	}
-	lenr = read(file_d buffer, letters);
+	lenr = read(file_d, buffer, letters);
 	close(file_d);
 	if (lenr == -1)
 	{
 		free(buffer);
 		return (0);
 	}
-	lenw = write(STDOUT_FILENO, bufffer, lenr);
+	lenw = write(STDOUT_FILENO, buffer, lenr);
 	free(buffer);
-	if (lenw != lenw)
+	if (lenw != lenr)
 		return (0);
 	return (lenw);
 }
