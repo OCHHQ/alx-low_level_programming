@@ -15,13 +15,13 @@ void check_IO_stat(int stat, int fd, char *filename, char mode);
  */
 int main(int argc, char *argv[])
 {
-	int src, dst, n_reasd = 1024, wrote, close_src, close_dest;
+	int src, dest, n_reasd = 1024, wrote, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 	char buffer[1024];
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n")
+		dprintf(STDERR_FILENO, "%s", "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	src = open(argv[1], O_RDONLY);
@@ -57,7 +57,7 @@ void check_IO_stat(int stat, int fd, char *filename, char mode)
 {
 	if (mode == 'C' && stat == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd)
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd);
 		exit(100);
 	}
 	else if (mode == 'O' && stat == -1)
