@@ -1,28 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - Entry point
+ * main - Prints the last digit of a random number
  *
- * Return: Always 0 (sucess)
+ * Return: 0 on success
  */
 int main(void)
 {
 	int n;
-	int L;
-	char str[] = "last digit of";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	L = n % 10;
 
-	if (L > 5)
-		printf("%s %d is %d and is greater than 5\n", str, n, L);
-	else if (L == 0)
-		printf("%s %d is %d and is 0\n", str, n, L);
-	else if (L == 6)
-		printf("%s %d is %d and is less than 6 and not 0\n", str, n, L);
+	printf("Last digit of %d is %d and is ", n, n % 10);
+
+	if (n % 10 > 5)
+		printf("greater than 5\n");
+	else if (n % 10 == 0)
+		printf("0\n");
+	else
+		printf("less than 6 and not 0\n");
 
 	return (0);
 }
-
