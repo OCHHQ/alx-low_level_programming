@@ -1,26 +1,29 @@
 #include <stdio.h>
+
 /**
- **main - prints out first 50
- *fibonacci suit numbers
- *Return: return 0
+ * Calculates the next Fibonacci number given the current two numbers.
  */
-int main(void)
-{
-int inc;
-unsigned long n1 = 0, n2 = 1, n3;
-for (inc = 0; inc < 50; inc++)
-{
-n3 = n1 + n2;
-printf("%lu", n3);
-n1 = n2;
-n2 = n3;
-
-if (inc == 49)
-printf("\n");
-else
-printf(", ");
-
+unsigned long calculateNextFibonacci(unsigned long a, unsigned long b) {
+    return a + b;
 }
-	
-return (0);
+
+int main(void) {
+    int inc;
+    unsigned long fib1 = 0, fib2 = 1, nextFib;
+
+    for (inc = 0; inc < 50; inc++) {
+        nextFib = calculateNextFibonacci(fib1, fib2);
+
+        printf("%lu", nextFib);
+
+        fib1 = fib2;
+        fib2 = nextFib;
+
+        if (inc == 49)
+            printf("\n");
+        else
+            printf(", ");
+    }
+
+    return (0);
 }
