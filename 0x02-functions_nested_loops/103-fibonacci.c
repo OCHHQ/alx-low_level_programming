@@ -1,24 +1,33 @@
 #include <stdio.h>
 
+/**
+ * calculateNextFibonacci - Calculates the next Fibonacci number given the current two numbers.
+ */
+unsigned long calculateNextFibonacci(unsigned long a, unsigned long b) {
+    return a + b;
+}
+
+/**
+ * main - prints out first 50 Fibonacci suit numbers
+ * Return: return 0
+ */
 int main(void) {
-    int term1 = 1, term2 = 2, nextTerm, sum = 0;
+    int inc;
+    unsigned long fib1 = 0, fib2 = 1, nextFib;
 
-    while (term1 <= 4000000) {
-        /* Check if the current term is even */
-        if (term1 % 2 == 0) {
-            sum += term1;
-        }
+    for (inc = 0; inc < 50; inc++) {
+        nextFib = calculateNextFibonacci(fib1, fib2);
 
-        /* Calculate the next term in the Fibonacci sequence */
-        nextTerm = term1 + term2;
+        printf("%lu", nextFib);
 
-        /* Update terms for the next iteration */
-        term1 = term2;
-        term2 = nextTerm;
+        fib1 = fib2;
+        fib2 = nextFib;
+
+        if (inc == 49)
+            printf("\n");
+        else
+            printf(", ");
     }
 
-    /* Print the sum of even-valued terms */
-    printf("Sum of even-valued terms in Fibonacci sequence: %d\n", sum);
-
-    return 0;
+    return (0);
 }
