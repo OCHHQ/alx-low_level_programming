@@ -17,7 +17,7 @@ void print_line(int n)
 	{
 		for (co = 1; co <= n; co++)
 		{
-			_putchar('_'):
+			_putchar('_');
 		}
 		_putchar('\n');
 	}
