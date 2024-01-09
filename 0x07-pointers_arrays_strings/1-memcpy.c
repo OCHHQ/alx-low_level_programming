@@ -8,14 +8,15 @@
  *
  * Return: a pointer to the destination memory area
  */
+
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i = 0;
+	int r = 0;
+	int i = n;
 
 	for (; i < n; i++)
 	{
-		dest[i] = src[i];
+		dest[r] = src[r];
 	}
 	return (dest);
 }
-
