@@ -1,18 +1,23 @@
+#include "dog.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <dog.h>
-
 /**
- * print_dog - print a struct dog
- * @d: struct dog to print
+ * print_dog - print the struct decleared for dog d
+ *
+ * @d: the new dog d of type struct
  */
-void print_dog(const struct dog *d)
+void print_dog(struct dog *d)
 {
-	if (d == NULL)
-		return;
+	if (d)
+	{
+		if (!((*d).name))
+			printf("Name: (nil)\n");
+		else
+			printf("Name: %s\n", d->name);
+		printf("Age: %f\n", d->age);
 
-	const char *name_to_print = (d->name != NULL) ? d->name : "(nil)";
-	const char *owner_to_print = (d->owner != NULL) ? d->owner : "(nil)";
-	
-	printf("Name: %s\nAge: %.2f\nOwner: %s\n", name_to_print, d->age, owner_to_print);
+		if (!(d->owner))
+			printf("Owner: (nil)\n");
+		else
+			printf("Owner: %s\n", (*d).owner);
+	}
 }
