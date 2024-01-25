@@ -46,6 +46,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	print("\n");
+	printf("\n");
 	va_end(spc);
 }
