@@ -8,7 +8,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i check_stat;
+	int i, check_stat;
 
 	char *str;
 	va_list spc;
@@ -21,7 +21,7 @@ void print_all(const char * const format, ...)
 		switch (format[i])
 		{
 			case 'i':
-				printf("%d". va_arg(spc, int));
+				printf("%d", va_arg(spc, int));
 				check_stat = 0;
 				break;
 			case 'f':
