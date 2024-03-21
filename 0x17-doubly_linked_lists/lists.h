@@ -1,9 +1,8 @@
 #ifndef LISTS_H
 #define LISTS_H
 
-#include <stddef.h> /* Include <stddef.h> for size_t and NULL */
+#include <stddef.h>
 
-/* Definition of dlistint_t structure */
 typedef struct dlistint_s
 {
     int n;
@@ -11,10 +10,8 @@ typedef struct dlistint_s
     struct dlistint_s *next;
 } dlistint_t;
 
-/* Function prototype for print_dlistint */
 size_t print_dlistint(const dlistint_t *h);
-size_t dlistint_len(const dlistint_t *h);
 dlistint_t *add_dnodeint(dlistint_t **head, const int n);
-
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 #endif /* LISTS_H */
 
