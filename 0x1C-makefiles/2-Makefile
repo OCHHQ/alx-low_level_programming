@@ -1,0 +1,22 @@
+# 2-Makefile
+
+# Define variables
+CC = gcc
+SRC = main.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+
+# Define the rule
+all: $(NAME)
+
+# Rule to link the object files into the final executable
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+# Implicit rule to compile .c files into .o files
+%.o: %.c
+	$(CC) -c $< -o $@
+
+# Clean up object files and the executable
+clean:
+	rm -f $(OBJ) $(NAME)
