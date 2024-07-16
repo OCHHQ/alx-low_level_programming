@@ -1,10 +1,6 @@
-#ifndef MACRO_H
-#define MARCO_H
-/**
- * File: 0-object_like_macro.h
- *
- * Desc: header file
- */
+#ifndef _object_like_macro_h_
+#define _object_like_macro_h_
+
 #define SIZE 1024
 
-#endif 
+#endif /* _object_like_macro_h_ */
