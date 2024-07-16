@@ -1,10 +1,6 @@
-#ifndef MARCO_H
-#define MARCO_H
-/**
- * File: 1-pi.h
- *
- * Desc: header file 
- */
+#ifndef _pi_h_
+#define _pi_h_
+
 #define PI 3.14159265359
 
-#endif
+#endif /* _pi_h_ */
