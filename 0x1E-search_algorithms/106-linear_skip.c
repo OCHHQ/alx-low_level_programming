@@ -1,4 +1,6 @@
 #include "search_algos.h"
+#include <stdio.h>
+
 
 /**
  * linear_skip - Searches for an algorithm in a sorted singly
