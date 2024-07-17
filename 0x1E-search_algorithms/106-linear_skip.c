@@ -11,43 +11,43 @@
  */
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-    skiplist_t *current, *express;
+	skiplist_t *current, *next_node;
 
-    if (list == NULL)
-        return (NULL);
+	if (list == NULL)
+		return (NULL);
 
-    current = list;
-    express = list->express;
+	current = list;
+	next_node = list->express;
 
-    while (express != NULL)
-    {
-        printf("Value checked at index [%lu] = [%d]\n", express->index, express->n);
-        if (express->n >= value || express->express == NULL)
-        {
-            printf("Value found between indexes [%lu] and [%lu]\n",
-                   current->index, express->index);
-            break;
-        }
-        current = express;
-        express = express->express;
-    }
+	while (next_node != NULL)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", next_node->index, next_node->n);
+		if (next_node->n >= value || next_node->express == NULL)
+		{
+			printf("Value found between indexes [%lu] and [%lu]\n",
+				   current->index, next_node->index);
+			break;
+		}
+		current = next_node;
+		next_node = next_node->express;
+	}
 
-    if (express == NULL)
-    {
-        current = list;
-        while (current->next != NULL)
-            current = current->next;
-        printf("Value found between indexes [%lu] and [%lu]\n",
-               current->index, current->index);
-    }
+	if (next_node == NULL)
+	{
+		current = list;
+		while (current->next != NULL)
+			current = current->next;
+		printf("Value found between indexes [%lu] and [%lu]\n",
+			   current->index, current->index);
+	}
 
-    while (current != NULL && current->index <= express->index)
-    {
-        printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
-        if (current->n == value)
-            return (current);
-        current = current->next;
-    }
+	while (current != NULL && current->index <= next_node->index)
+	{
+		printf("Value checked at index [%lu] = [%d]\n", current->index, current->n);
+		if (current->n == value)
+			return (current);
+		current = current->next;
+	}
 
-    return (NULL);
+	return (NULL);
 }
