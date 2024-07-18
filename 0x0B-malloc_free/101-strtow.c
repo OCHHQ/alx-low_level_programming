@@ -10,9 +10,9 @@
  */
 int _isspace(int c)
 {
-        if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
-                return (1);
-        return (0);
+    if (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
+        return (1);
+    return (0);
 }
 
 /**
@@ -23,36 +23,22 @@ int _isspace(int c)
  */
 int count_words(char *str)
 {
-        int count = 0, in_word = 0;
+    int count = 0, in_word = 0;
 
-        while (*str)
+    while (*str)
+    {
+        if (_isspace(*str))
         {
-                if (_isspace(*str))
-                {
-                        in_word = 0;
-                }
-                else if (!in_word)
-                {
-                        in_word = 1;
-                        count++;
-                }
-                str++;
+            in_word = 0;
         }
-        return (count);
-}
-
-/**
- * strtow - splits a string into words
- * @str: the string to split
- *
- * Return: a pointer to an array of strings (words), or NULL if failure
- */
-char **strtow(char *str);
-
-int main(void)
-{
-        char **tab = strtow("      ALX School         #cisfun      ");
-        return (0);
+        else if (!in_word)
+        {
+            in_word = 1;
+            count++;
+        }
+        str++;
+    }
+    return (count);
 }
 
 /**
@@ -63,44 +49,44 @@ int main(void)
  */
 char **strtow(char *str)
 {
-        char **words, *word_start, *word;
-        int word_count, word_len, i = 0;
+    char **words, *word_start, *word;
+    int word_count, word_len, i = 0;
 
-        if (str == NULL || *str == '\0')
-                return (NULL);
+    if (str == NULL || *str == '\0')
+        return (NULL);
 
-        word_count = count_words(str);
-        if (word_count == 0)
-                return (NULL);
+    word_count = count_words(str);
+    if (word_count == 0)
+        return (NULL);
 
-        words = malloc((word_count + 1) * sizeof(char *));
-        if (words == NULL)
-                return (NULL);
+    words = malloc((word_count + 1) * sizeof(char *));
+    if (words == NULL)
+        return (NULL);
 
-        while (*str)
+    while (*str)
+    {
+        if (_isspace(*str))
         {
-                if (_isspace(*str))
-                {
-                        str++;
-                        continue;
-                }
-                word_start = str;
-                while (*str && !_isspace(*str))
-                        str++;
-                word_len = str - word_start;
-                word = malloc((word_len + 1) * sizeof(char));
-                if (word == NULL)
-                {
-                        for (i = i - 1; i >= 0; i--)
-                                free(words[i]);
-                        free(words);
-                        return (NULL);
-                }
-                for (i = 0; i < word_len; i++)
-                        word[i] = word_start[i];
-                word[word_len] = '\0';
-                words[i++] = word;
+            str++;
+            continue;
         }
-        words[i] = NULL;
-        return (words);
+        word_start = str;
+        while (*str && !_isspace(*str))
+            str++;
+        word_len = str - word_start;
+        word = malloc((word_len + 1) * sizeof(char));
+        if (word == NULL)
+        {
+            for (i = i - 1; i >= 0; i--)
+                free(words[i]);
+            free(words);
+            return (NULL);
+        }
+        for (i = 0; i < word_len; i++)
+            word[i] = word_start[i];
+        word[word_len] = '\0';
+        words[i++] = word;
+    }
+    words[i] = NULL;
+    return (words);
 }
